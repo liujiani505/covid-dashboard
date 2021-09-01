@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;900&display=swap');
+
+body{
+    font-family:'Noto Sans JP', sans-serif;
+    background-color: rgb(231, 231, 231) !important;
+}
+
+.navbar-brand {
+ margin: 10px;
+} 
+
+.navbar .navbar-toggler {
+top: .25rem;
+right: 1rem;
+}
+
+.navbar .form-control {
+padding: .75rem 1rem;
+border-width: 0;
+border-radius: 0;
+}
+
+.form-control-dark {
+color: #fff;
+background-color: rgba(255, 255, 255, .1);
+border-color: rgba(255, 255, 255, .1);
+}
+
+.col{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.card1{
+    background-color: rgb(241, 237, 252);
+    color: rgb(75, 23, 172);
+    border-radius: 5px;
+    height: 200px;
+}
+
+.card2{
+    background-color:rgb(250, 237, 232);
+    color: rgb(245, 37, 37);
+    border-radius: 5px;
+    height: 200px;
+}
+
+.card3{
+    background-color:rgb(224, 236, 250);
+    color: rgb(0, 66, 153);
+    border-radius: 5px;
+    height: 200px;
+}
+
+.country-overview p {
+    font-size: 2em;
+}
+
+.card-body h6{
+    margin-top: 10px;  
+}
+
+img {
+    margin-top: 15px;
+}
+
+#country{
+    margin-top: 30px;
+}
