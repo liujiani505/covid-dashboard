@@ -12,6 +12,7 @@
 - Bootstrap
 - Chart.js
 - COVID API
+- Country Flags API
 - Google Fonts
 
 ## Wireframe
