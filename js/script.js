@@ -61,8 +61,7 @@ function handleData(event){
                                 y: {
                                     beginAtZero: true
                                 }
-                            }
-                            
+                            }  
                         }
                     });  
 
