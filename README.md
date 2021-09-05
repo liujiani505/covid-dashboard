@@ -13,11 +13,15 @@
 - Chart.js
 - COVID API
 - Country Flags API
-- Google Fonts
+
 
 ## Wireframe
 <img width="725" alt="wireframe" src="https://user-images.githubusercontent.com/64924326/131761342-5a51713c-d1ae-49f1-b282-b6cc877111ff.png">
 
 ## Getting Started
 
-## Future Enhancementsgit
+## Future Enhancements
+- Make the search function case insensitive
+- Implement jQuery animation for altering numbers
+- Implement sortable data table
+
