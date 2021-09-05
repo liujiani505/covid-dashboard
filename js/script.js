@@ -9,9 +9,9 @@ const $country = $("#country")
 const $flag = $(".flag")
 const $population = $("#population")
 const $lifeexpectancy = $("#life-expectancy")
-const $countrybarchart = $("#country-barchart")
-const ctx = $('#country-barchart')[0].getContext('2d');
-
+const $continent = $("#continent")
+const $location = $("#location")
+const $capitalcity = $("#capital-city")
 
 function handleData(event){
     event.preventDefault();
@@ -20,9 +20,12 @@ function handleData(event){
         casesData = data;
         $totalcases.text(`${casesData.All.confirmed.toLocaleString()}`) 
         $totaldeaths.text(`${casesData.All.deaths.toLocaleString()}`)
-        $country.html(`<h3>CASES IN: <strong>${casesData.All.country}</strong></h3>`)
-        $population.html(`<h6>Population: ${casesData.All.population.toLocaleString()}</h6>`)
-        $lifeexpectancy.html(`<h6>Life Expectancy: ${casesData.All.life_expectancy}</h6>`)
+        $country.html(`<h3><strong>${casesData.All.country}</strong></h3>`)
+        $population.html(`<h6><strong>Population:</strong> ${casesData.All.population.toLocaleString()}</h6>`)
+        $lifeexpectancy.html(`<h6><strong>Life Expectancy:</strong> ${casesData.All.life_expectancy}</h6>`)
+        $continent.html(`<h6><strong>Continent:</strong> ${casesData.All.continent}</h6>`)
+        $location.html(`<h6><strong>Location:</strong> ${casesData.All.location}</h6>`)
+        $capitalcity.html(`<h6><strong>Capital City:</strong> ${casesData.All.capital_city}</h6>`)
         // add a flag for each country
         let country = {countryCode: casesData.All.abbreviation}
         $flag.html(`<img src="https://www.countryflags.io/${country.countryCode}/flat/64.png"} width="100" height="100" />`)
@@ -32,17 +35,19 @@ function handleData(event){
                 vaccinesData = data;
                 $vaccinations.text(`${vaccinesData.All.people_vaccinated.toLocaleString()}`)
 
-                //generate a bar chart
-                generateBarChart(ctx, ["Total Cases", "Total Deaths", "Vaccinations"], [casesData.All.confirmed, casesData.All.deaths, vaccinesData.All.people_vaccinated]);
+                // create a chart
 
-                function generateBarChart(canvas, label, data){
-                    const myChart = new Chart(canvas, {
+                $(".canvas-wrapper").html("").html(`<canvas id="doughnut-chart" width="50" height="50"></canvas>`)
+
+                const ctx = $('#doughnut-chart')[0].getContext('2d');
+                
+                    const myChart = new Chart(ctx, {
                         type: 'doughnut',
                         data: {
-                            labels: label,
+                            labels: ["Total Cases", "Total Deaths", "Vaccinations"],
                             datasets: [{
                                 label: 'number',      
-                                data: data,
+                                data: [casesData.All.confirmed, casesData.All.deaths, vaccinesData.All.people_vaccinated],
                                 backgroundColor: [
                                     'rgba(241, 237, 252)',
                                     'rgba(250, 237, 232)',
@@ -63,37 +68,9 @@ function handleData(event){
                                 }
                             }  
                         }
-                    });  
+                    });
 
-                    
-                    // const updateChartValue = (input, index) => {
-                    //     input.on('change', e => {
-                    //         myChart.data.datasets[0].data[index] = e.target.value;
-                    //         myChart.update();
-                    //     });
-                    // };
-                    
-                    // updateChartValue(0);
-                    // updateChartValue(1);
-                    // updateChartValue(2);
 
-                    // function addData(canvas, label, data) {
-                    //     canvas.data.labels.push(label);
-                    //     canvas.data.datasets.forEach((dataset) => {
-                    //         dataset.data.push(data);
-                    //     });
-                    //     canvas.update();
-                    // }
-                        
-                    // function removeData(canvas) {
-                    //     canvas.data.labels.pop();
-                    //     canvas.data.datasets.forEach((dataset) => {
-                    //         dataset.data.pop();
-                    //     });
-                    //     canvas.update();
-                    // }
-
-                }
 
             }, function(error){
                 console.log(error)
@@ -105,4 +82,6 @@ function handleData(event){
 }
 
 $("form").on("submit", handleData)
+
+
 

@@ -21,73 +21,96 @@
         </form>
     </header>
 
-
     <main>
 
         <div class="country-overview bg-white">
 
             <div class="container p-4">          
-                <div class="row">
-                    <div class="col-md-2">
-                      <div class="text-dark">
-                        <div class="flag">
-                        </div>
-                        <div id = "country">
-                            <h3>COVID-19 BY COUNTRY</h3>
-                        </div>
-                        <div id = "population">
-                        </div>
-                        <div id = "life-expectancy">
-                        </div>
-                        
-                      </div>
-                    </div>
-                    <div class="col-md-10">
-                        <div class ="container">                      
-                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">  
-                                <div class="col">
-                                    <div class="card1 shadow-sm">
-                                        <div class="card-body">
-                                            <img id="total-cases-icon" src = "img/total cases.png" width = "50px">
-                                            <h6 class="total cases">TOTAL CASES</h6>
-                                            <p id="total-cases"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card2 shadow-sm">
-                                        <div class="card-body">
-                                            <img id="total-deaths-icon" src = "img/total deaths.png" width = "65px">
-                                            <h6 class="total-deaths">TOTAL DEATHS</h6>
-                                            <p id="total-deaths"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                        <div class="card3 shadow-sm">
-                                            <div class="card-body">
-                                            <img id="vaccinations-icon" src = "img/vaccinations.png" width = "50px">
-                                            <h6 class="vaccinations">VACCINATIONS</h6>
-                                            <p id="vaccinations"></p>
-                                        </div>
-                                    </div>
-                                </div>
-            
-                            </div>
-                        </div>
-                        <div class ="container">
-                            <div class ="col-md-7 mt-5">
-                                <canvas id="country-barchart" width="50" height="50"></canvas>
-                            </div>
-                        </div>
-                    </div>
 
+                <div class ="container">                      
+                    <div class="row">  
+                        <div class="col">
+                            <div class="card1 shadow-sm rounded">
+                                <div class="card-body">
+                                    <img id="total-cases-icon" src = "img/total cases.png" width = "50px">
+                                    <p id="total-cases">0</p>    
+                                    <h6 class="total cases">Total cases</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card2 shadow-sm rounded">
+                                <div class="card-body">
+                                    <img id="total-deaths-icon" src = "img/total deaths.png" width = "65px">
+                                    <p id="total-deaths">0</p>
+                                    <h6 class="total-deaths">Total deaths</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                                <div class="card3 shadow-sm rounded">
+                                    <div class="card-body">
+                                    <img id="vaccinations-icon" src = "img/vaccinations.png" width = "50px">
+                                    <p id="vaccinations">0</p>
+                                    <h6 class="vaccinations">People vaccinated </h6>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
                 </div>
-            </div>
+                
+                <div class ="container">
+                    <div class ="row">
+                        <div class="col-md-5">
+                            <div class="country-demographic jumbotron bg-white mt-3 border">
+                                <div class="text-dark">
+                                    <div class="flag">
+                                    </div>
+                                    <div id = "country">
+                                        <h3>COVID-19 BY COUNTRY</h3>
+                                    </div>
+                                    <div id = "population">
+                                    </div>
+                                    <div id = "life-expectancy">
+                                    </div>
+                                    <div id = "continent">
+                                    </div>
+                                    <div id = "location">
+                                    </div>
+                                    <div id = "capital-city">
+                                    </div>     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class ="canvas-wrapper jumbotron mt-3 border bg-light" >
+                                <canvas id="doughnut-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        
+                <div class="container">
+                    <div class="livecases-table col-md-12 bg-light text-dark">
+                        <h3>LIVE CASES</h3>
+                        <div class="country-data">
+                            <table class="table">
+                                <thead>
+                                    <th>Country</th>
+                                    <th>Total Cases</th>
+                                </thead>
+                                <tbody id="table-data">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     
     </main>
 </body>
 
 </html>
-
