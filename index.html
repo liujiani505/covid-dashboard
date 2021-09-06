@@ -25,7 +25,38 @@
 
         <div class="country-overview bg-white">
 
-            <div class="container p-4">          
+            <div class="container p-4">   
+                
+                <div class ="container">
+                    <div class ="row">
+                        <div class="col-md-6">
+                            <div class="country-demographic jumbotron bg-white">
+                                <div class="text-dark">
+                                    <div class="flag">
+                                    </div>
+                                    <div id = "country">
+                                        <h2>COVID-19 DATA BY COUNTRY</h2>
+                                    </div>
+                                    <div id = "population">
+                                    </div>
+                                    <div id = "life-expectancy">
+                                    </div>
+                                    <div id = "continent">
+                                    </div>
+                                    <div id = "location">
+                                    </div>
+                                    <div id = "capital-city">
+                                    </div>     
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class ="canvas-wrapper jumbotron bg-white" >
+                                <canvas id="doughnut-chart" style="width:90px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class ="container">                      
                     <div class="row">  
@@ -59,46 +90,17 @@
     
                     </div>
                 </div>
-                
-                <div class ="container">
-                    <div class ="row">
-                        <div class="col-md-5">
-                            <div class="country-demographic jumbotron bg-white mt-3 border">
-                                <div class="text-dark">
-                                    <div class="flag">
-                                    </div>
-                                    <div id = "country">
-                                        <h3>COVID-19 BY COUNTRY</h3>
-                                    </div>
-                                    <div id = "population">
-                                    </div>
-                                    <div id = "life-expectancy">
-                                    </div>
-                                    <div id = "continent">
-                                    </div>
-                                    <div id = "location">
-                                    </div>
-                                    <div id = "capital-city">
-                                    </div>     
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class ="canvas-wrapper jumbotron mt-3 border bg-light" >
-                                <canvas id="doughnut-chart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="container">
-                    <div class="livecases-table col-md-12 bg-light text-dark">
-                        <h3>LIVE CASES</h3>
+                    <div class="livecases-table col-md-12 bg-white border text-dark mt-5">
+                        <!-- <h3>LIVE CASES</h3> -->
                         <div class="country-data">
-                            <table class="table">
-                                <thead>
+                            <table class="table table-striped">
+                                <thead class="thead-dark">
                                     <th>Country</th>
-                                    <th>Total Cases</th>
+                                    <th>Confirmed</th>
+                                    <th>Deaths</th>
+                                    <th>Recovered</th>
                                 </thead>
                                 <tbody id="table-data">
                                 </tbody>
@@ -111,6 +113,7 @@
         </div>
      
     </main>
+
 </body>
 
 </html>
